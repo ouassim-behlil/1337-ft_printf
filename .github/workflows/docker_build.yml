@@ -1,0 +1,31 @@
+name: Build and Test Docker
+
+# Trigger workflow on push or pull request
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Set up Docker (comes preinstalled on ubuntu-latest)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # 3. Build Docker image
+      - name: Build Docker image
+        run: docker build -t printf:latest .
+
+      # 4. Run Docker container and execute tests
+      - name: Run tests inside Docker
+        run: docker run --rm printf:latest
