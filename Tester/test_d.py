@@ -1,0 +1,28 @@
+"""Integer (%d) tests for ft_printf"""
+
+def test_d(tester):
+    """Test %d format specifier"""
+    tester.run_test("zero", " %d ", 0)
+    tester.run_test("negative one", " %d ", -1)
+    tester.run_test("one", " %d ", 1)
+    tester.run_test("nine", " %d ", 9)
+    tester.run_test("ten", " %d ", 10)
+    tester.run_test("eleven", " %d ", 11)
+    tester.run_test("fifteen", " %d ", 15)
+    tester.run_test("sixteen", " %d ", 16)
+    tester.run_test("seventeen", " %d ", 17)
+    tester.run_test("ninety-nine", " %d ", 99)
+    tester.run_test("one hundred", " %d ", 100)
+    tester.run_test("one hundred one", " %d ", 101)
+    tester.run_test("negative nine", " %d ", -9)
+    tester.run_test("negative ten", " %d ", -10)
+    tester.run_test("negative eleven", " %d ", -11)
+    tester.run_test("negative fourteen", " %d ", -14)
+    tester.run_test("negative fifteen", " %d ", -15)
+    tester.run_test("negative sixteen", " %d ", -16)
+    tester.run_test("negative ninety-nine", " %d ", -99)
+    tester.run_test("negative one hundred", " %d ", -100)
+    tester.run_test("negative one hundred one", " %d ", -101)
+    tester.run_test("INT_MAX", " %d ", 2147483647)
+    tester.run_test("INT_MIN", " %d ", -2147483648)
+    tester.run_test("multiple integers", " %d %d %d %d %d %d %d", 2147483647, -2147483648, 2147483647, -2147483648, 4294967295, 0, -42)
