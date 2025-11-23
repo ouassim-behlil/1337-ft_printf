@@ -33,9 +33,9 @@ static int	convert(const char c, va_list *ap)
 	else if (c == 's')
 		return (ft_putstr(va_arg(*ap, char *)));
 	else if (c == 'x')
-		return (ft_hexputlower(va_arg(*ap, int)));
+		return (ft_hexputlower(va_arg(*ap, unsigned int)));
 	else if (c == 'X')
-		return (ft_hexputupper(va_arg(*ap, int)));
+		return (ft_hexputupper(va_arg(*ap, unsigned int)));
 	else
 		return ((int)write(1, &c, 1));
 }
