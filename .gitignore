@@ -1,0 +1,31 @@
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+
+# Library
+libftprintf.a
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Test outputs
+Tester/*.log
+Tester/test_results/
+
+# Compiled executables
+a.out
+*.out
+
+# Debug files
+*.dSYM/
+vgcore.*
+
+# Dependencies
+*.d

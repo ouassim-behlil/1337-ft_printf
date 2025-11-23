@@ -1,13 +1,25 @@
 name: Build and Test Docker
 
-# Trigger workflow on push or pull request
+# Trigger workflow on push or pull request when relevant files change
 on:
   push:
     branches:
       - main
+    paths:
+      - '**.c'
+      - '**.h'
+      - 'Makefile'
+      - 'Dockerfile'
+      - 'Tester/**'
   pull_request:
     branches:
       - main
+    paths:
+      - '**.c'
+      - '**.h'
+      - 'Makefile'
+      - 'Dockerfile'
+      - 'Tester/**'
 
 jobs:
   build-and-test:
